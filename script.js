@@ -1,11 +1,8 @@
-//Player tries to guess num
+const box = document.querySelector('.box')
+const button = document.querySelector('button')
+const text = document.querySelector('.text')
 let num;
 
-//Select the box
-const box = document.querySelector('.box')
-
-//Select the button
-const button = document.querySelector('button')
 
 //Define speech recognition
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
@@ -22,12 +19,14 @@ recognition.addEventListener('result', function (e) {
         .map(result => result.transcript) //gives arrays
         .join('') //turn array to string
 
-    console.log(transcript)
-    box.textContent = transcript
+    let isNumber = Number(transcript)
 
-    if (box.textContent == num) {
-        console.log('true')
-    }
+    if(isNumber==='NaN'){
+        box.textContent = 'Not a Number'
+    } else box.textContent = transcript
+
+    console.log( isNumber)
+
 })
 
 recognition.addEventListener('end', recognition.start) //When speaking end, start again the start function
