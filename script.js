@@ -1,6 +1,7 @@
 const box = document.querySelector('.box')
 const button = document.querySelector('button')
-const text = document.querySelector('.text')
+const text1 = document.querySelector('.text1')
+const text2 =  document.querySelector('.text2')
 let num;
 
 
@@ -21,11 +22,18 @@ recognition.addEventListener('result', function (e) {
 
     let isNumber = Number(transcript)
 
-    if(isNumber==='NaN'){
-        box.textContent = 'Not a Number'
-    } else box.textContent = transcript
+    if(Number.isNaN(isNumber)){ //dont use isNumber===NaN, use Number.isNaN()
+      {text1.textContent = 'Not a Number', box.textContent=''}
+    } else {box.textContent = transcript, text1.textContent = ''}
 
-    console.log( isNumber)
+    
+    if(isNumber>num){
+       return text1.textContent = 'Go Lower'
+    }else if(isNumber<num){
+        return text1.textContent = 'Go Higher'
+    } else if(isNumber===num)
+        return text1.textContent = 'Congratulations'
+     
 
 })
 
