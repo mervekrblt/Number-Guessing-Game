@@ -6,12 +6,13 @@ body{
     margin: 0 0;
     font-family: 'VT323', monospace;
     color: white;
+    font-size: 20px;
 }
 
 .header{
     display: flex;
     justify-content: center;
-    font-size: 60px;
+    font-size: 100px;
     transition: all 0.5s;
     color: white;
 }
@@ -24,21 +25,20 @@ body{
 
 button{
     font-family: 'VT323', monospace;
-    font-size: 30px;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    font-size: 50px;
+    background-color: white;
+    color: black;
     border-radius: 20px;
     outline: none;
     cursor: pointer;
 }
 
 .main{
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 .box{
@@ -54,3 +54,10 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+.btns{
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+}
+
